@@ -1,12 +1,15 @@
-document.querySelectorAll(".faq-01__question").forEach((question) => {
+document.querySelectorAll(".faq-question").forEach((question) => {
   question.addEventListener("click", () => {
-    const isOpen = question.classList.contains("state-active");
-    document.querySelectorAll(".faq-01__question").forEach((item) => {
-      item.classList.remove("state-active");
-      item.setAttribute("aria-expanded", "false");
+    const item = question.closest(".faq-item");
+    const shouldOpen = !item.classList.contains("is-open");
+
+    document.querySelectorAll(".faq-item").forEach((faq) => {
+      faq.classList.remove("is-open");
+      faq.querySelector(".faq-question").setAttribute("aria-expanded", "false");
     });
-    if (!isOpen) {
-      question.classList.add("state-active");
+
+    if (shouldOpen) {
+      item.classList.add("is-open");
       question.setAttribute("aria-expanded", "true");
     }
   });
