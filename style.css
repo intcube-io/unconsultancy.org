@@ -228,7 +228,6 @@ button:focus-visible {
 .post-card {
   display: block;
   max-width: 270px;
-  min-height: 220px;
   margin: 0 auto;
   overflow: hidden;
   border: 1px solid rgba(0, 0, 0, 0.08);
@@ -237,11 +236,12 @@ button:focus-visible {
   transition: opacity 0.2s ease;
 }
 
-.post-card::before {
-  content: "";
+.post-card img {
   display: block;
-  height: 130px;
-  background: linear-gradient(135deg, var(--accent), #87dde5);
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  object-fit: cover;
 }
 
 .post-card h3 {
@@ -388,6 +388,36 @@ button:focus-visible {
   padding-bottom: 130px;
 }
 
+.article-back {
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  margin-bottom: 28px;
+  padding: 8px 14px;
+  color: var(--accent);
+  border: 2px solid var(--accent);
+  border-radius: 4px;
+  font-family: var(--font-bold);
+  font-size: 15px;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.article a.article-back {
+  text-decoration: none;
+}
+
+.article-back:hover {
+  color: var(--white);
+  background: var(--accent);
+  opacity: 1;
+  text-decoration: none;
+}
+
+.article a.article-back:hover {
+  text-decoration: none;
+}
+
 .article h1 {
   max-width: 900px;
   padding-bottom: 30px;
@@ -399,10 +429,19 @@ button:focus-visible {
 }
 
 .article-date {
-  margin-bottom: 55px;
+  margin-bottom: 34px;
   color: #00396b;
   font-size: 14px;
   text-transform: uppercase;
+}
+
+.article-hero-image {
+  display: block;
+  width: 100%;
+  max-width: 1040px;
+  height: auto;
+  margin: 0 auto 56px;
+  border-radius: 8px;
 }
 
 .article p:not(.article-date) {
@@ -462,6 +501,15 @@ button:focus-visible {
 
   .article {
     padding-bottom: 80px;
+  }
+
+  .article-back {
+    margin-bottom: 22px;
+  }
+
+  .article-hero-image {
+    margin-bottom: 38px;
+    border-radius: 6px;
   }
 
   .article p:not(.article-date) {
