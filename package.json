@@ -1,0 +1,11 @@
+{
+  "name": "unconsultancy.org",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "preview": "npm run build && python3 -m http.server 8000 --directory _site",
+    "build": "node scripts/build-public-site.mjs",
+    "check": "node scripts/check-static-site.mjs"
+  }
+}

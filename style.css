@@ -64,6 +64,18 @@ a:hover {
   opacity: 0.82;
 }
 
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--ink);
+  outline-offset: 4px;
+}
+
+.site-header--light a:focus-visible,
+.manifesto-card a:focus-visible,
+.site-footer a:focus-visible {
+  outline-color: var(--white);
+}
+
 .container {
   width: min(100% - 36px, 1100px);
   margin: 0 auto;
@@ -454,5 +466,19 @@ a:hover {
 
   .article p:not(.article-date) {
     font-size: 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
   }
 }
